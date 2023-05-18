@@ -1,0 +1,38 @@
+.table-hover tbody tr:hover {
+    background-color: #5cda3596; /* un color más brillante que el original */
+  }
+
+.fuente-1{
+  font-family: 'PT Sans', sans-serif;
+}
+
+.fuente-2{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.bg-1{
+  background-color: #1D594E !important;
+}
+
+.bg-2{
+  background-color: #F2CB05 !important;
+}
+
+.bg-3{
+  background-color: #F29F05 !important;
+}
+
+.bg-4{
+  background-color: #F28705 !important;
+}
+
+.bg-5{
+  background-color: #F23030 !important;
+}
+
+.bg-img-index{
+  background-image: url("../imagenes/fondo.jpg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

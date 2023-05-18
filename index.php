@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestion Inmobiliaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-img-index">
+  <div class="bg-3 d-flex justify-content-between">
+    <div class="bg-5 rounded-end d-flex">
+    <div class="text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-house-gear-fill"
+        viewBox="0 0 16 16">
+        <path
+          d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5Z" />
+        <path
+          d="M11.07 9.047a1.5 1.5 0 0 0-1.742.26l-.02.021a1.5 1.5 0 0 0-.261 1.742 1.5 1.5 0 0 0 0 2.86 1.504 1.504 0 0 0-.12 1.07H3.5A1.5 1.5 0 0 1 2 13.5V9.293l6-6 4.724 4.724a1.5 1.5 0 0 0-1.654 1.03Z" />
+        <path
+          d="m13.158 9.608-.043-.148c-.181-.613-1.049-.613-1.23 0l-.043.148a.64.64 0 0 1-.921.382l-.136-.074c-.561-.306-1.175.308-.87.869l.075.136a.64.64 0 0 1-.382.92l-.148.045c-.613.18-.613 1.048 0 1.229l.148.043a.64.64 0 0 1 .382.921l-.074.136c-.306.561.308 1.175.869.87l.136-.075a.64.64 0 0 1 .92.382l.045.149c.18.612 1.048.612 1.229 0l.043-.15a.64.64 0 0 1 .921-.38l.136.074c.561.305 1.175-.309.87-.87l-.075-.136a.64.64 0 0 1 .382-.92l.149-.044c.612-.181.612-1.049 0-1.23l-.15-.043a.64.64 0 0 1-.38-.921l.074-.136c.305-.561-.309-1.175-.87-.87l-.136.075a.64.64 0 0 1-.92-.382ZM12.5 14a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" />
+      </svg>
+    </div>
+      <img src="imagenes/img1.png" alt="" height="50px" class="my-2 mx-3">
+    </div>
+    <div class="d-flex justify-content-start align-items-center fuente-2 fw-bold">
+        <div class="mx-2">
+          <a class="btn bg-5 text-white fw-bold fs-4" href="propiedades.php" role="button" aria-controls="offcanvasExample">
+            Propiedades
+          </a>
+        </div>
+        <div class="mx-2">
+          <a class="btn bg-5 text-white fw-bold fs-4" href="index2.php" role="button" aria-controls="offcanvasExample">
+            Agentes
+          </a>
+        </div>
+        <div class="mx-2">
+          <a class="btn bg-5 text-white fw-bold fs-4" href="index.php" role="button" aria-controls="offcanvasExample">
+            Inicio
+          </a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="text-center py-2">
+        <?php
+        if (isset($_GET['mensaje']) and $_GET['mensaje'] == 'falta') {
+            ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <span class="align-middle"><strong>Error!</strong> Rellena todos los campos.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php
+        }
+        ?>
+        <!-- Para el mensaje de error -->
+
+        <!-- Cuando se registraron los datos -->
+        <?php
+        if (isset($_GET['mensaje']) and $_GET['mensaje'] == 'registrado') {
+            ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span class="align-middle"><strong>Registrado!</strong> Se agregaron los datos.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php
+        }
+        ?>
+        <!-- Cuando se registraron los datos -->
+
+
+        <?php
+        if (isset($_GET['mensaje']) and $_GET['mensaje'] == 'error') {
+            ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <span class="align-middle"><strong>Error!</strong> No se agregaron los datos.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php
+        }
+        ?>
+
+        <?php
+        if (isset($_GET['mensaje']) and $_GET['mensaje'] == 'editado') {
+            ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span class="align-middle"><strong>Editado!</strong> Se actualizaron los datos.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php
+        }
+        ?>
+
+        <!-- habria que evaluar el condicional -->
+        <?php
+        if (isset($_GET['mensaje']) and $_GET['mensaje'] == 'eliminado') {
+            ?>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span class="align-middle"><strong>Eliminado!</strong> Se eliminaron los datos.</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+    <div class="container-fluid pt-5" height="1200px">
+        <div class="d-flex justify-content-center align-items-center pt-5">
+          <img src="imagenes/img2.png" alt="" height="400px">
+        </div>
+      </div>
+
+      <?php include('Componentes/piedepagina.php'); ?>
